@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[ZhouYang's Blog]]></title>
+  
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://halochou.github.com/"/>
+  <updated>2014-01-07T14:03:49.065Z</updated>
+  <id>http://halochou.github.com/</id>
+  
+  <author>
+    <name><![CDATA[Zhou Yang]]></name>
+    
+  </author>
+  
+  <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <link href="http://halochou.github.com/2014/01/07/hello-world/"/>
+    <id>http://halochou.github.com/2014/01/07/hello-world/</id>
+    <published>2014-01-07T11:52:34.000Z</published>
+    <updated>2014-01-07T11:52:34.000Z</updated>
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://zespia.tw/hexo" target="_blank">Hexo</a>! This is your very first post. Check <a href="http://zespia.tw/hexo/docs" target="_blank">documentation</a> to learn how to use.</p>
+]]></content>
+    
+    
+  </entry>
+  
+</feed>
