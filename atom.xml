@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Tech & Life Record]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://halochou.github.com/"/>
-  <updated>2014-01-08T03:34:08.448Z</updated>
+  <updated>2014-01-08T03:51:36.366Z</updated>
   <id>http://halochou.github.com/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <link href="http://halochou.github.com/2014/01/08/markdown-syntax/"/>
     <id>http://halochou.github.com/2014/01/08/markdown-syntax/</id>
     <published>2014-01-08T03:31:43.000Z</published>
-    <updated>2014-01-08T03:33:35.000Z</updated>
-    <content type="html"><![CDATA[<p>本文转自<a href="http://wowubuntu.com" target="_blank">Wow!Ubuntu</a>，用作Markdown备忘。</p>
+    <updated>2014-01-08T03:50:08.000Z</updated>
+    <content type="html"><![CDATA[<p>本文转自<a href="http://wowubuntu.com" target="_blank">Wow!Ubuntu</a>，用作Markdown备忘。<br><a id="more"></a></p>
 <p><strong>NOTE:</strong> This is Simplelified  Chinese Edition Document of Markdown Syntax. If you are seeking for English Edition Document. Please refer to <a href="http://daringfireball.net/projects/markdown/syntax" target="_blank">Markdown: Syntax</a>.</p>
 <p><strong>声明：</strong> 这份文档派生(fork)于<a href="http://markdown.tw/" target="_blank">繁体中文版</a>，在此基础上进行了繁体转简体工作，并进行了适当的润色。此文档用 Markdown 语法编写，你可以到这里<a href="http://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md" target="_blank">查看它的源文件</a>。「繁体中文版的原始文件可以<a href="https://github.com/othree/markdown-syntax-zhtw/blob/master/syntax.md" target="_blank">查看这里</a> 。」—By @<a href="http://twitter.com/riku" target="_blank">riku</a></p>
 <p><strong>注：</strong> 本项目托管于 <a href="http://gitcafe.com/riku/Markdown-Syntax-CN/" target="_blank">GitCafe</a>上，请通过”派生”和”合并请求”来帮忙改进本项目。</p>
@@ -532,7 +532,9 @@ _   底线
 </ul>
 <p>*** 如有更好的 Markdown 免费编辑器推荐，请到<a href="https://gitcafe.com/riku/Markdown-Syntax-CN/tickets/1" target="_blank">这里反馈</a>，谢谢！</p>
 ]]></content>
+    <summary type="html"><![CDATA[<p>本文转自<a href="http://wowubuntu.com" target="_blank">Wow!Ubuntu</a>，用作Markdown备忘。<br>]]></summary>
     
+      <category term="markdown" scheme="http://halochou.github.com/tags/markdown/"/>
     
   </entry>
   
@@ -541,7 +543,7 @@ _   底线
     <link href="http://halochou.github.com/2014/01/08/hexo-config/"/>
     <id>http://halochou.github.com/2014/01/08/hexo-config/</id>
     <published>2014-01-08T02:10:18.000Z</published>
-    <updated>2014-01-08T03:25:36.000Z</updated>
+    <updated>2014-01-08T03:50:04.000Z</updated>
     <content type="html"><![CDATA[<p>第一次搭博客，发现这还真是个挺有意思的话题。</p>
 <h1 id="-5e73-53f0-9009-62e9-">平台选择</h1>
 <p>本人基本上患有选择困难症，之前用Linux的时候，每个月换一次发行版，这次挑选博客平台时又毫无意外的花了很长时间抉择。经过一般挖掘，大致有以下几个选项。</p>
@@ -663,6 +665,8 @@ _   底线
 ]]></content>
     
     
+      <category term="hexo" scheme="http://halochou.github.com/tags/hexo/"/>
+    
   </entry>
   
   <entry>
@@ -670,12 +674,14 @@ _   底线
     <link href="http://halochou.github.com/2014/01/07/hello-world/"/>
     <id>http://halochou.github.com/2014/01/07/hello-world/</id>
     <published>2014-01-07T11:52:34.000Z</published>
-    <updated>2014-01-07T14:41:42.000Z</updated>
+    <updated>2014-01-08T03:51:03.000Z</updated>
     <content type="html"><![CDATA[<p>开博客的想法由来已久，最近在一个朋友的鼓励下决定付诸时间。</p>
 <p>经常光顾各种技术大牛的博客，吸收知识的同时也有各种艳羡。<br>我不是个专业的程序员，或者说不算程序员，只是个编程爱好者。</p>
 <p>希望这个博客能是一个新的开始。</p>
 ]]></content>
     
+    
+      <category term="life" scheme="http://halochou.github.com/tags/life/"/>
     
   </entry>
   
