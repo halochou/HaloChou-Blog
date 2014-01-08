@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://halochou.github.com/2014/01/08/markdown-syntax/</loc>
+    <lastmod>2014-01-08T03:31:43.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://halochou.github.com/2014/01/08/hexo-config/</loc>
     <lastmod>2014-01-08T02:10:18.000Z</lastmod>
   </url>
