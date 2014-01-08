@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Tech & Life Record]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://halochou.github.com/"/>
-  <updated>2014-01-08T05:48:08.513Z</updated>
+  <updated>2014-01-08T05:54:09.179Z</updated>
   <id>http://halochou.github.com/</id>
   
   <author>
@@ -19,9 +19,11 @@
     <link href="http://halochou.github.com/2014/01/08/linux-and-me/"/>
     <id>http://halochou.github.com/2014/01/08/linux-and-me/</id>
     <published>2014-01-08T04:43:45.000Z</published>
-    <updated>2014-01-08T05:48:00.000Z</updated>
+    <updated>2014-01-08T05:54:02.000Z</updated>
     <content type="html"><![CDATA[<p>没记错的话，大约就是2000年第一次接触Linux，当时看到杂志上说Linux能在很古老的硬件上运行，而且Titanic就是用这东西渲染的。</p>
 <p>是的，这就是当时我对Linux的全部了解。<br>于是就冲到盗版盘市场买了张RedHat 6.2（不是现在的RHEL 6.2，那会RedHat还没分出Fedora和RHEL呢）。回来安装就受阻了，什么是Mount Point,完全不懂啊，当时也没有网络，只能在书店一本一本找。等终于成功装完，才发现这是个和Windows完全不同的世界，束手束脚，什么都不会做。第一次接触Linux就这样被彻底吓到了，当晚装回Windows ME，宣告迁移失败。</p>
+<a id="more"></a>
+
 <p>不过实践了就有益无害，这一步真是为之后接触Linux开了个好头。</p>
 <p>高中的时候喜欢跑到邮局书店看免费杂志，从《电脑爱好者》（感谢CFAN启蒙之恩）里看到Ubuntu官网的光盘免费派送活动，尝试这申请了一个，不料真的邮寄来了。试用一下，如同进入一个广阔的新天地，Gnome+Compiz简直太炫目了。有人评论Ubuntu在Linux普及上的贡献是巨大的，确实不错。如果当时用的是Arch，估计我就又果断撤退了。</p>
 <p>初用Ubuntu，最大的不适应就是常用软件，图形界面下没几个靠谱的（其实现在也是…），Openoffice更是完全闹着玩的，根本没办法代替M$，而且家里的台式机也不是我一个人用，还要照顾父母的工作，折腾幅度必须尽量小，结果就是多次尝试迁移主系统到Ubuntu都失败了。</p>
@@ -35,7 +37,9 @@
 <p>我在2013年底购入了人生的第一台Mac，之前尝试过黑苹果，但是稳定性太差，根本无法实用。现在用上OSX，感觉就像是回家，这才是真正意义上的产品。这是最先进的操作系统，没有之一。</p>
 <p>杂七杂八写了不少，就此打住吧。</p>
 ]]></content>
-    
+    <summary type="html"><![CDATA[<p>没记错的话，大约就是2000年第一次接触Linux，当时看到杂志上说Linux能在很古老的硬件上运行，而且Titanic就是用这东西渲染的。</p>
+<p>是的，这就是当时我对Linux的全部了解。<br>于是就冲到盗版盘市场买了张RedHat 6.2（不是现在的RHEL 6.2，那会RedHat还没分出Fedora和RHEL呢）。回来安装就受阻了，什么是Mount Point,完全不懂啊，当时也没有网络，只能在书店一本一本找。等终于成功装完，才发现这是个和Windows完全不同的世界，束手束脚，什么都不会做。第一次接触Linux就这样被彻底吓到了，当晚装回Windows ME，宣告迁移失败。</p>
+]]></summary>
     
       <category term="life" scheme="http://halochou.github.com/tags/life/"/>
     
@@ -572,8 +576,10 @@ _   底线
     <link href="http://halochou.github.com/2014/01/08/hexo-config/"/>
     <id>http://halochou.github.com/2014/01/08/hexo-config/</id>
     <published>2014-01-08T02:10:18.000Z</published>
-    <updated>2014-01-08T03:50:04.000Z</updated>
+    <updated>2014-01-08T05:54:01.000Z</updated>
     <content type="html"><![CDATA[<p>第一次搭博客，发现这还真是个挺有意思的话题。</p>
+<a id="more"></a>
+
 <h1 id="-5e73-53f0-9009-62e9-">平台选择</h1>
 <p>本人基本上患有选择困难症，之前用Linux的时候，每个月换一次发行版，这次挑选博客平台时又毫无意外的花了很长时间抉择。经过一般挖掘，大致有以下几个选项。</p>
 <ul>
@@ -692,7 +698,8 @@ _   底线
 </code></pre><h1 id="Bug">Bug</h1>
 <p>我在配置Hexo过程中，出现过<code>hexo s</code>正常，但是<code>hexo g</code>报错<code>EISDIR</code>的故障，与使用<code>hexo new page &quot;about&quot;</code>有关，new page在<code>/source</code>内创建了一个文件夹，但hexo g无法识别，暂未找到解决办法，建议在配置Hexo过程中多generate，节省Debug时间。</p>
 ]]></content>
-    
+    <summary type="html"><![CDATA[<p>第一次搭博客，发现这还真是个挺有意思的话题。</p>
+]]></summary>
     
       <category term="hexo" scheme="http://halochou.github.com/tags/hexo/"/>
     
@@ -703,7 +710,7 @@ _   底线
     <link href="http://halochou.github.com/2014/01/07/hello-world/"/>
     <id>http://halochou.github.com/2014/01/07/hello-world/</id>
     <published>2014-01-07T11:52:34.000Z</published>
-    <updated>2014-01-08T05:38:01.000Z</updated>
+    <updated>2014-01-08T05:53:59.000Z</updated>
     <content type="html"><![CDATA[<p>开博的想法由来已久，在一个朋友的启发下决定付诸实践。</p>
 <p>经常光顾各种技术大牛的博客，吸收知识的同时也有各种艳羡。<br>我不算程序员，只是个编程爱好者，学的也不是计算机专业，但是确实无比热爱这门科学。<br>第一篇博文用来回忆一下自己和计算机的故事吧，没什么逻辑性，也没什么文笔，权当留个纪念。</p>
 <p>1997年的时候，父亲工作单位给家里分配了一台PC，记得品牌叫A-Star，16MB内存，800MB昆腾硬盘。现在这些牌子恐怕早就没有了吧。当时我只有8岁，现在看来，能那么早接触计算机真是幸运。如今这个产业很发达，小孩子都会玩iPad、上网，入门没有门槛，但含金量也自然下降了，何况游戏的诱惑太大，要想对计算机本身产生兴趣还真是困难。97年那会就不同了，虽然当时应该已经有了Win95，但家里的电脑还是Win32，现在看Win32不过就是DOS上的一个APP，启动了它再启动游戏可能资源就不够了，于是一切活动都在DOS里进行。cd pal、play.bat…当时根本不知道play是什么意思，看来游戏的动力真是大啊。</p>
