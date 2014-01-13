@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2014-01-13T16:51:26+08:00</updated>
+<updated>2014-01-13T17:35:41+08:00</updated>
 <id>/</id>
 <author>
   <name>Zhou Yang</name>
@@ -15,142 +15,11 @@
 
 
 <entry>
-  <title type="html"><![CDATA[Linux/Unix Learn Note]]></title>
-  <link rel="alternate" type="text/html" href="/cli-note" />
-  <id>/cli-note</id>
-  <published>2014-01-13T15:22:00Z</published>
-  <updated>2014-01-13T15:22:00Z</updated>
-  <author>
-    <name>Zhou Yang</name>
-    <uri></uri>
-    <email>halo.chou@gmail.com</email>
-  </author>
-  <content type="html">&lt;p&gt;This is a note which recorded *nix cli command I learnt.
-It will be updated continuously.&lt;/p&gt;
-
-&lt;h1 id=&quot;linux&quot;&gt;Linux&lt;/h1&gt;
-
-&lt;h2 id=&quot;process&quot;&gt;Process&lt;/h2&gt;
-
-&lt;h3 id=&quot;lsof&quot;&gt;lsof&lt;/h3&gt;
-
-&lt;p&gt;Get which file was opened by &lt;code&gt;pid&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;lsof -p pid
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Get which process opened this file.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;lsof /var/run/sendmail.pid 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Get file already been deleted but still held in /proc&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;lsof | grep deleted
-cat /proc/pid/fd/dddd &amp;gt; /tmp/sample
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Get process using port 80&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;lsof -i :80
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Get process communicating with 192.168.1.10&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;lsof -i @192.168.1.10
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&quot;aix&quot;&gt;AIX&lt;/h1&gt;
-
-&lt;h2 id=&quot;process-1&quot;&gt;Process&lt;/h2&gt;
-
-&lt;p&gt;List of process&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ps -ef  #HPUX&#39;s style.
-ps aux  #AIX, Linux style.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Get pid using /usr&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;fuser -c /usr  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Monitor process’s system call usage.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;strace #Linux
-truss  #AIX
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;lvm&quot;&gt;LVM&lt;/h2&gt;
-
-&lt;p&gt;Rebuild LVCB,VGDA for &lt;code&gt;somevg&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;synclvodm -v somevg
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Refresh VG info in the ODM.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;rootvg:&lt;code&gt;redefinevg rootvg&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;normal vg:&lt;code&gt;varyoffvg&lt;/code&gt;,&lt;code&gt;exportvg&lt;/code&gt;,&lt;code&gt;importvg&lt;/code&gt;,&lt;code&gt;varyonvg&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Add pvid for new disk.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;chdev -l hdisk4 -a pv=yes
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Filesystem check.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;fsck /mountpoint
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Fix superblock.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;dd count=1 bs=4k skip=31 seek=1 if=/dev/lv00 of=/dev/lv00
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Umount a busy device.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#fuser -x -c /home
-/home:11630
-#ps -fp 11630
-guest 11630 14992 0 16:44:51 pts/1 0:00 -sh
-# kill -1 11630
-# umount /home
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&quot;hmc&quot;&gt;HMC&lt;/h1&gt;
-
-&lt;h2 id=&quot;dlpar-dynamic-addremove-rmc-error&quot;&gt;DLPAR dynamic add/remove RMC error&lt;/h2&gt;
-
-&lt;p&gt;1.Restart RMC process.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;/usr/sbin/rsct/bin/rmcctrl -A
-/usr/sbin/rsct/bin/rmcctrl -p
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;2.Refresh src.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;refresh -g rsct_rm
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;3.Rebuild RMC database.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;/usr/sbin/rsct/install/bin/recfgct
-&lt;/code&gt;&lt;/pre&gt;
-
-
-  &lt;p&gt;&lt;a href=&quot;/cli-note&quot;&gt;Linux/Unix Learn Note&lt;/a&gt; was originally published by Zhou Yang at &lt;a href=&quot;&quot;&gt;Halo Zone&lt;/a&gt; on January 13, 2014.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
   <title type="html"><![CDATA[折腾Jekyll的收获]]></title>
   <link rel="alternate" type="text/html" href="/about-jekyll" />
   <id>/about-jekyll</id>
-  <published>2014-01-13T15:22:00Z</published>
-  <updated>2014-01-13T15:22:00Z</updated>
+  <published>2014-01-13T16:25:00Z</published>
+  <updated>2014-01-13T16:25:00Z</updated>
   <author>
     <name>Zhou Yang</name>
     <uri></uri>
@@ -321,6 +190,137 @@ h2 {
 &lt;p&gt;目前掌握的大致这些，修改一下别人的主题基本够用，有时间再详细研究。&lt;/p&gt;
 
   &lt;p&gt;&lt;a href=&quot;/about-jekyll&quot;&gt;折腾Jekyll的收获&lt;/a&gt; was originally published by Zhou Yang at &lt;a href=&quot;&quot;&gt;Halo Zone&lt;/a&gt; on January 13, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Linux/Unix Learn Note]]></title>
+  <link rel="alternate" type="text/html" href="/cli-note" />
+  <id>/cli-note</id>
+  <published>2014-01-13T15:22:00Z</published>
+  <updated>2014-01-13T15:22:00Z</updated>
+  <author>
+    <name>Zhou Yang</name>
+    <uri></uri>
+    <email>halo.chou@gmail.com</email>
+  </author>
+  <content type="html">&lt;p&gt;This is a note which recorded *nix cli command I learnt.
+It will be updated continuously.&lt;/p&gt;
+
+&lt;h1 id=&quot;linux&quot;&gt;Linux&lt;/h1&gt;
+
+&lt;h2 id=&quot;process&quot;&gt;Process&lt;/h2&gt;
+
+&lt;h3 id=&quot;lsof&quot;&gt;lsof&lt;/h3&gt;
+
+&lt;p&gt;Get which file was opened by &lt;code&gt;pid&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;lsof -p pid
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Get which process opened this file.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;lsof /var/run/sendmail.pid 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Get file already been deleted but still held in /proc&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;lsof | grep deleted
+cat /proc/pid/fd/dddd &amp;gt; /tmp/sample
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Get process using port 80&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;lsof -i :80
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Get process communicating with 192.168.1.10&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;lsof -i @192.168.1.10
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&quot;aix&quot;&gt;AIX&lt;/h1&gt;
+
+&lt;h2 id=&quot;process-1&quot;&gt;Process&lt;/h2&gt;
+
+&lt;p&gt;List of process&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ps -ef  #HPUX&#39;s style.
+ps aux  #AIX, Linux style.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Get pid using /usr&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;fuser -c /usr  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Monitor process’s system call usage.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;strace #Linux
+truss  #AIX
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;lvm&quot;&gt;LVM&lt;/h2&gt;
+
+&lt;p&gt;Rebuild LVCB,VGDA for &lt;code&gt;somevg&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;synclvodm -v somevg
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Refresh VG info in the ODM.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;rootvg:&lt;code&gt;redefinevg rootvg&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;normal vg:&lt;code&gt;varyoffvg&lt;/code&gt;,&lt;code&gt;exportvg&lt;/code&gt;,&lt;code&gt;importvg&lt;/code&gt;,&lt;code&gt;varyonvg&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Add pvid for new disk.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;chdev -l hdisk4 -a pv=yes
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Filesystem check.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;fsck /mountpoint
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Fix superblock.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;dd count=1 bs=4k skip=31 seek=1 if=/dev/lv00 of=/dev/lv00
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Umount a busy device.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#fuser -x -c /home
+/home:11630
+#ps -fp 11630
+guest 11630 14992 0 16:44:51 pts/1 0:00 -sh
+# kill -1 11630
+# umount /home
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&quot;hmc&quot;&gt;HMC&lt;/h1&gt;
+
+&lt;h2 id=&quot;dlpar-dynamic-addremove-rmc-error&quot;&gt;DLPAR dynamic add/remove RMC error&lt;/h2&gt;
+
+&lt;p&gt;1.Restart RMC process.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/usr/sbin/rsct/bin/rmcctrl -A
+/usr/sbin/rsct/bin/rmcctrl -p
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2.Refresh src.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;refresh -g rsct_rm
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3.Rebuild RMC database.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/usr/sbin/rsct/install/bin/recfgct
+&lt;/code&gt;&lt;/pre&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;/cli-note&quot;&gt;Linux/Unix Learn Note&lt;/a&gt; was originally published by Zhou Yang at &lt;a href=&quot;&quot;&gt;Halo Zone&lt;/a&gt; on January 13, 2014.&lt;/p&gt;</content>
 </entry>
 
 

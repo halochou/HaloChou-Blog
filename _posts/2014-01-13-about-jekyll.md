@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 折腾Jekyll的收获
-date: 2014-01-13 16:252:00
+date: 2014-01-13 16:25:00
 tags: [jekyll, blog]
 ---
 还是忍不住又折腾了一次，花了不少时间把blog迁移到Jekyll了，不过收获还是不小的。
