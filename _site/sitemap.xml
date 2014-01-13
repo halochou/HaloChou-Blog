@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc></loc>
+        <loc>http://halochou.github.io</loc>
     </url>
     
     
     <url>
-        <loc>/about-jekyll</loc>
+        <loc>http://halochou.github.io/about-jekyll</loc>
     </url>
     
     <url>
-        <loc>/cli-note</loc>
+        <loc>http://halochou.github.io/cli-note</loc>
     </url>
     
     <url>
-        <loc>/linux-and-me</loc>
+        <loc>http://halochou.github.io/linux-and-me</loc>
     </url>
     
     <url>
-        <loc>/hexo-config</loc>
+        <loc>http://halochou.github.io/hexo-config</loc>
     </url>
     
     <url>
-        <loc>/hello-world</loc>
+        <loc>http://halochou.github.io/hello-world</loc>
     </url>
     
 </urlset>
