@@ -5,13 +5,323 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2014-01-13T14:11:23+08:00</updated>
+<updated>2014-01-13T16:51:26+08:00</updated>
 <id>/</id>
 <author>
   <name>Zhou Yang</name>
   <uri>/</uri>
   <email>halo.chou@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Linux/Unix Learn Note]]></title>
+  <link rel="alternate" type="text/html" href="/cli-note" />
+  <id>/cli-note</id>
+  <published>2014-01-13T15:22:00Z</published>
+  <updated>2014-01-13T15:22:00Z</updated>
+  <author>
+    <name>Zhou Yang</name>
+    <uri></uri>
+    <email>halo.chou@gmail.com</email>
+  </author>
+  <content type="html">&lt;p&gt;This is a note which recorded *nix cli command I learnt.
+It will be updated continuously.&lt;/p&gt;
+
+&lt;h1 id=&quot;linux&quot;&gt;Linux&lt;/h1&gt;
+
+&lt;h2 id=&quot;process&quot;&gt;Process&lt;/h2&gt;
+
+&lt;h3 id=&quot;lsof&quot;&gt;lsof&lt;/h3&gt;
+
+&lt;p&gt;Get which file was opened by &lt;code&gt;pid&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;lsof -p pid
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Get which process opened this file.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;lsof /var/run/sendmail.pid 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Get file already been deleted but still held in /proc&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;lsof | grep deleted
+cat /proc/pid/fd/dddd &amp;gt; /tmp/sample
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Get process using port 80&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;lsof -i :80
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Get process communicating with 192.168.1.10&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;lsof -i @192.168.1.10
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&quot;aix&quot;&gt;AIX&lt;/h1&gt;
+
+&lt;h2 id=&quot;process-1&quot;&gt;Process&lt;/h2&gt;
+
+&lt;p&gt;List of process&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ps -ef  #HPUX&#39;s style.
+ps aux  #AIX, Linux style.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Get pid using /usr&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;fuser -c /usr  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Monitor process’s system call usage.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;strace #Linux
+truss  #AIX
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;lvm&quot;&gt;LVM&lt;/h2&gt;
+
+&lt;p&gt;Rebuild LVCB,VGDA for &lt;code&gt;somevg&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;synclvodm -v somevg
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Refresh VG info in the ODM.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;rootvg:&lt;code&gt;redefinevg rootvg&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;normal vg:&lt;code&gt;varyoffvg&lt;/code&gt;,&lt;code&gt;exportvg&lt;/code&gt;,&lt;code&gt;importvg&lt;/code&gt;,&lt;code&gt;varyonvg&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Add pvid for new disk.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;chdev -l hdisk4 -a pv=yes
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Filesystem check.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;fsck /mountpoint
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Fix superblock.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;dd count=1 bs=4k skip=31 seek=1 if=/dev/lv00 of=/dev/lv00
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Umount a busy device.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#fuser -x -c /home
+/home:11630
+#ps -fp 11630
+guest 11630 14992 0 16:44:51 pts/1 0:00 -sh
+# kill -1 11630
+# umount /home
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&quot;hmc&quot;&gt;HMC&lt;/h1&gt;
+
+&lt;h2 id=&quot;dlpar-dynamic-addremove-rmc-error&quot;&gt;DLPAR dynamic add/remove RMC error&lt;/h2&gt;
+
+&lt;p&gt;1.Restart RMC process.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/usr/sbin/rsct/bin/rmcctrl -A
+/usr/sbin/rsct/bin/rmcctrl -p
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2.Refresh src.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;refresh -g rsct_rm
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3.Rebuild RMC database.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/usr/sbin/rsct/install/bin/recfgct
+&lt;/code&gt;&lt;/pre&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;/cli-note&quot;&gt;Linux/Unix Learn Note&lt;/a&gt; was originally published by Zhou Yang at &lt;a href=&quot;&quot;&gt;Halo Zone&lt;/a&gt; on January 13, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[折腾Jekyll的收获]]></title>
+  <link rel="alternate" type="text/html" href="/about-jekyll" />
+  <id>/about-jekyll</id>
+  <published>2014-01-13T15:22:00Z</published>
+  <updated>2014-01-13T15:22:00Z</updated>
+  <author>
+    <name>Zhou Yang</name>
+    <uri></uri>
+    <email>halo.chou@gmail.com</email>
+  </author>
+  <content type="html">&lt;p&gt;还是忍不住又折腾了一次，花了不少时间把blog迁移到Jekyll了，不过收获还是不小的。&lt;/p&gt;
+
+&lt;p&gt;原本用hexo挺好的，忍不住研究了一下Jekyll的目录结构，比hexo简洁许多，虽然需要自己动手的地方多些，但就当学习Web前端技术了。&lt;/p&gt;
+
+&lt;p&gt;折腾期间按照Instapaper的风格fork出了一套主题，已传到&lt;a href=&quot;https://github.com/halochou/Instapaper-Jekyll-theme&quot;&gt;Github&lt;/a&gt;了。改得很粗糙，留着以后慢慢雕琢吧&lt;/p&gt;
+
+&lt;p&gt;现在Blog用的主题是&lt;a href=&quot;http://mademistakes.com&quot;&gt;Minimal Mistakes&lt;/a&gt;，自己做了一些符合天朝特色的&lt;a href=&quot;https://github.com/halochou/halochou.github.com&quot;&gt;定制&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;此番对Web前端技术的认识有了不少提高，简单整理一下。&lt;/p&gt;
+
+&lt;h1 id=&quot;bootstrap&quot;&gt;Bootstrap&lt;/h1&gt;
+&lt;p&gt;Twitter工程师开发的前端框架，我理解就是一组预定好的网页组件、布局的CSS，只包含前端视觉部分，可用于任何html设计环境。&lt;/p&gt;
+
+&lt;p&gt;基本模板：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+  &amp;lt;head&amp;gt;
+    &amp;lt;title&amp;gt;Bootstrap 101 Template&amp;lt;/title&amp;gt;
+    &amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&amp;gt;
+    &amp;lt;!-- Bootstrap --&amp;gt;
+    &amp;lt;link href=&quot;css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&amp;gt;
+    &amp;lt;!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --&amp;gt;
+    &amp;lt;!-- WARNING: Respond.js doesn&#39;t work if you view the page via file:// --&amp;gt;
+    &amp;lt;!--[if lt IE 9]&amp;gt;
+      &amp;lt;script src=&quot;https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
+      &amp;lt;script src=&quot;https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;![endif]--&amp;gt;
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;
+    &amp;lt;h1&amp;gt;Hello, world!&amp;lt;/h1&amp;gt;
+    &amp;lt;!-- jQuery (necessary for Bootstrap&#39;s JavaScript plugins) --&amp;gt;
+    &amp;lt;script src=&quot;https://code.jquery.com/jquery.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;!-- Include all compiled plugins (below), or include individual files as needed --&amp;gt;
+    &amp;lt;script src=&quot;js/bootstrap.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;模板包含最基本CSS、JS文件的导入，之后只需在body部分添加自己的网页组件即可。采用12列形式布局，如果需要对CSS进行定制，则建立自己的CSS文件，在bootstrap.css之后导入覆盖即可。&lt;/p&gt;
+
+&lt;h1 id=&quot;css&quot;&gt;CSS&lt;/h1&gt;
+&lt;p&gt;一直也没系统学习过CSS，不过通过定制Jekyll主题，倒是对CSS有了个大致了解。&lt;/p&gt;
+
+&lt;p&gt;CSS用于统一定义网页样式，将html内容数据与样式信息分离解耦。&lt;/p&gt;
+
+&lt;h2 id=&quot;css-1&quot;&gt;CSS基本语法：&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;selector {
+    declaration1; 
+    declaration2; 
+    ... 
+    declarationN 
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;selector（选择器）是需要定制的html元素，如&lt;code&gt;h1&lt;/code&gt;，&lt;code&gt;h2&lt;/code&gt;，&lt;code&gt;p&lt;/code&gt;，&lt;code&gt;li&lt;/code&gt;等。
+declaration通常是相关属性的赋值。&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;派生选择器：&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;strong {
+     color: red;
+     }
+h2 {
+     color: red;
+     }
+h2 strong {
+     color: blue;
+     }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;选择器通常有不同状态，比如一段文字&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;，可能有href超链接属性，超链接又存在默认、鼠标悬停、点击等不同的状态，派生选择器通过显式声明追加新的样式定义，类似程序语言中的函数重载。&lt;/p&gt;
+
+&lt;h2 id=&quot;id&quot;&gt;id选择器：&lt;/h2&gt;
+&lt;p&gt;HTML中定义元素时，可以为特定元素添加id属性，如果此id在CSS中有定义，则该元素就按照CSS被渲染。&lt;code&gt;&amp;lt;div id=&quot;sidebar-wrap&quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt;就创建了一个侧边栏的容器。同一个HTML页面中，每个id都是唯一的，即一个实例。&lt;/p&gt;
+
+&lt;p&gt;CSS定义id选择器的样式：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#sidebar {
+    font-style: italic;
+    text-align: right;
+    margin-top: 0.5em;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;class&quot;&gt;class选择器：&lt;/h2&gt;
+&lt;p&gt;相对于id，class指代一类元素的样式，同一页面中可以出现多次。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.sidebar-item{
+    color: #f60;
+    background: #666;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&quot;less&quot;&gt;LESS&lt;/h1&gt;
+&lt;p&gt;手工编写CSS冗长切不灵活，于是产生了CSS预编译语言，LESS只是其中一种，Bootstrap默认采用LESS。LESS在CSS语法的基础上添加了许多程序语言元素。
+##变量&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;@color: #4D926F;
+#header {
+  color: @color;
+}
+h2 {
+  color: @color;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;mixins&quot;&gt;Mixins（带参函数）&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;.rounded-corners (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+#header {
+  .rounded-corners;
+}
+#footer {
+  .rounded-corners(10px);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;嵌套&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;#header {
+  h1 {
+    font-size: 26px;
+    font-weight: bold;
+  }
+  p { font-size: 12px;
+    a { text-decoration: none;
+      &amp;amp;:hover { border-width: 1px }
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;运算&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;@the-border: 1px;
+@base-color: #111;
+@red:        #842210;
+#header {
+  color: (@base-color * 3);
+  border-left: @the-border;
+  border-right: (@the-border * 2);
+}
+#footer {
+  color: (@base-color + #003300);
+  border-color: desaturate(@red, 10%);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;LESS可以编译生成CSS，编译器基于node.js。也可以直接在HTML中加载，但性能会有折损。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;link rel=&quot;stylesheet/less&quot; type=&quot;text/css&quot; href=&quot;styles.less&quot; /&amp;gt;
+&amp;lt;script src=&quot;less.js&quot; type=&quot;text/javascript&quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;目前掌握的大致这些，修改一下别人的主题基本够用，有时间再详细研究。&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;/about-jekyll&quot;&gt;折腾Jekyll的收获&lt;/a&gt; was originally published by Zhou Yang at &lt;a href=&quot;&quot;&gt;Halo Zone&lt;/a&gt; on January 13, 2014.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
