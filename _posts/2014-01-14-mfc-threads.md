@@ -1,6 +1,6 @@
 ---
 layout: post
-title: \[转载\]MFC多线程的界面更新
+title: 转载-MFC多线程的界面更新
 date: 2014-01-14 09:47:00
 tags: [mfc]
 ---
